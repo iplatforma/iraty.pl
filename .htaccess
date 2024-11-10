@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+# Warunek i reguła dla przekierowywania na index.php, jeśli ścieżka nie pasuje do określonych plików/katalogów
+RewriteCond $1 !^(index\.php|sitemap\.xml|assets|robots\.txt|android-chrome-192x192\.png|android-chrome-512x512\.png|apple-touch-icon\.png|browserconfig\.xml|favicon\.ico|favicon-16x16\.png|favicon-32x32\.png|mstile-150x150\.png|safari-pinned-tab\.svg|site\.webmanifest)
+RewriteRule ^(.*)$ index.php/$1 [L]

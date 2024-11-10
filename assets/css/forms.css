@@ -1,0 +1,147 @@
+form.contact {display:inline-block;width:100%;height:auto;overflow:visible;}
+form.contact label {width:100%;display:inline-block;margin:15px 0 10px;}
+form.contact input[type=text], form.contact input[type=email], form.contact input[type=password], form.contact select, form.contact textarea {font-family:'Work Sans',sans-serif;font-size:15px;width:100%;border:1px solid #dbdbdb;border-radius:0;vertical-align:top;display:inline-block;line-height:36px;height:36px;margin-bottom:15px;padding:8px 10px;color:#000;transition:all 0.5s ease;}
+form.contact input[type=file] {margin-top:6px;}
+form.contact textarea {width:100%;height:140px;line-height:21px;resize:none;}
+form.contact input[type=text]:focus, form.contact input[type=email]:focus, form.contact input[type=password]:focus, form.contact select:focus, form.contact textarea:focus {border-bottom:1px solid #7fba00;background-color:#fff;}
+form.contact input[type=submit] {font-family:'Work Sans',sans-serif;cursor:pointer;display:inline-block;padding:16px 32px 14px;font-size:16px;font-weight:500;color:#04a3e3;border-radius:5px;color:#fff;background-color:#bc1616;border:1px solid #bc1616;transition:all 0.5s ease;}
+form.contact input[type=submit]:hover {background-color:#2a2a2a;border:1px solid #2a2a2a;}
+
+form.data .half-2 {width:50%;}
+form.data p.info {margin-top:15px;font-style:italic;font-size:11px;}
+
+form.data {display:inline-block;width:100%;height:auto;overflow:visible;}
+form.data label {width:100%;color:#4a4a4a;font-size:14px;display:inline-block;margin:15px 0 10px;}
+form.data label.checkbox {}
+form.data label.checkbox input[type=checkbox] {position:relative;top:-2px;margin-right:7px;}
+form.data input[type=text], form.data input[type=email], form.data input[type=password], form.data select, form.data textarea {font-family:'Work Sans',sans-serif;font-size:15px;width:80%;border:1px solid #dbdbdb;border-radius:10px;vertical-align:top;display:inline-block;line-height:44px;height:44px;margin-right:10px;margin-bottom:15px;padding:10px 15px;transition:all 0.5s ease;}
+form.data input[type=file] {margin-top:6px;}
+form.data textarea {width:80%;height:140px;line-height:21px;resize:none;}
+form.data input[type=text]:focus, form.data input[type=email]:focus, form.data input[type=password]:focus, form.data select:focus, form.data textarea:focus {outline:none;border:1px solid #0ab1f3;background-color:#f3f5f9;}
+form.data input[type=submit] {font-family:'Work Sans',sans-serif;cursor:pointer;display:inline-block;padding:16px 32px 14px;font-size:16px;font-weight:400;color:#04a3e3;border-radius:5px;color:#fff;background-color:#0ab1f3;border:1px solid #0ab1f3;transition:all 0.5s ease;}
+form.data input[type=submit]:hover {background-color:#2a2a2a;border:1px solid #2a2a2a;}
+
+.ll-skin-nigran {
+	font-size: 90%;
+}
+
+.ll-skin-nigran .ui-widget {
+	font-family: "Helvetica Neue","Trebuchet MS",Tahoma,Verdana,Arial,sans-serif;
+	background: rgba(57,135,233,0.95);
+	border: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	box-shadow: 0 1px 3px #252525;
+}
+
+.ll-skin-nigran .ui-datepicker {
+	padding: 0;
+}
+
+.ll-skin-nigran .ui-datepicker-header {
+	border: none;
+	border-bottom: 1px solid rgba(255,255,255,0.15);
+	background: transparent;
+	font-weight: normal;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+.ll-skin-nigran .ui-datepicker-header span {font-size:11px;color:#fff;}
+
+.ll-skin-nigran .ui-datepicker-header .ui-state-hover {
+	background: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-title {
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-prev-hover,
+.ll-skin-nigran .ui-datepicker .ui-datepicker-next-hover,
+.ll-skin-nigran .ui-datepicker .ui-datepicker-next,
+.ll-skin-nigran .ui-datepicker .ui-datepicker-prev {
+	top: 1.7em;
+	border:none;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-prev-hover {
+	left: 2px;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-next-hover {
+	right: 2px;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-next span,
+.ll-skin-nigran .ui-datepicker .ui-datepicker-prev span {
+	background-image: url('../gfx/icon/datepicker.png');
+	background-position: -32px -32px;
+	margin-top: 0;
+	top: 0;
+	font-weight: normal;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-prev span {
+	background-position: -96px -32px;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-prev-hover span {
+	background-position: -96px -48px;
+}
+
+.ll-skin-nigran .ui-datepicker .ui-datepicker-next-hover span {
+	background-position: -32px -48px;
+}
+
+.ll-skin-nigran .ui-datepicker table {
+	margin: 0;
+}
+
+.ll-skin-nigran .ui-datepicker th {
+	padding: 1em 0;
+	color: #9fd9f1;
+	font-size: 9px;
+	font-weight: normal;
+	text-shadow: 0 0 2px #45c4f8;
+	text-transform: uppercase;
+	border: none;
+	border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.ll-skin-nigran .ui-datepicker th span {
+	font-size:9px;	
+}
+
+.ll-skin-nigran .ui-datepicker td {
+	border: none;
+	padding: 0;
+}
+
+.ll-skin-nigran td .ui-state-default {
+	background: transparent;
+	border: none;
+	text-align: center;
+	padding: 0.5em 0.3em;
+	margin: 0;
+	font-weight: normal;
+	color: #efefef;
+	font-size: 12px;
+}
+
+.ll-skin-nigran td .ui-state-active,
+.ll-skin-nigran td .ui-state-hover {
+	background: rgba(0,0,0,0.15);
+	color:#fff;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+

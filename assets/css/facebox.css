@@ -1,0 +1,145 @@
+div.hide {display:none;height:auto;overflow:visible;}
+#facebox .b {
+  background:url(../gfx/facebox/b.png);
+}
+
+#facebox .tl {
+  background:url(../gfx/facebox/tl.png);
+}
+
+#facebox .tr {
+  background:url(../gfx/facebox/tr.png);
+}
+
+#facebox .bl {
+  background:url(../gfx/facebox/bl.png);
+}
+
+#facebox .br {
+  background:url(../gfx/facebox/br.png);
+}
+
+#facebox {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  text-align: left;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#facebox .popup {
+  position: relative;
+}
+
+#facebox table {
+  margin: auto;
+  border-collapse: collapse;
+  font-size:13px;
+}
+
+#facebox a {color:#d62136;text-decoration:none;}
+#facebox a:hover {color:#07222b;text-decoration:underline;}
+
+#facebox .body {
+  padding: 10px;
+  background: #fff;
+  width: 370px;
+}
+
+#facebox .loading {
+  text-align: center;
+}
+
+#facebox .image {
+  text-align: center;
+}
+
+#facebox img {
+  border: 0;
+  display:inline;
+}
+
+#facebox .footer {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+  margin-top: 20px;
+  text-align: right;
+  float:left;
+  clear:both;
+  width:100%;
+}
+
+#facebox .tl, #facebox .tr, #facebox .bl, #facebox .br {
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+#facebox .fcontent img {float:left;}
+#facebox .fcontent h3 {width:100%;color:#07222b;font-family: 'Montserrat', sans-serif;line-height:26px;font-size:22px;font-weight:300;margin:0 0 15px 0;padding:10px 0 6px 0;border-bottom:1px dotted #eee;text-transform:none;}
+#facebox .fcontent i {font-size:50px;line-height:60px;float:left;margin:0 25px 0 0;}
+#facebox .fcontent p {margin-bottom:6px;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:19px;}
+#facebox .fcontent p strong {font-weight:500;}
+#facebox .fcontent p a {font-weight:bold;}
+#facebox .fcontent form {display:block;width:100%;}
+#facebox .fcontent p.full {width:100%;display:inline-block;margin-top:15px;border:0;}
+#facebox .fcontent div.checkbox {width:100%;float:left;height:22px;padding:5px 0;} #facebox .fcontent div.checkbox input[type=checkbox] {margin:0px 6px 0 0;float:left;}
+#facebox form input[type=file] {float:left;clear:both;margin:0 0 10px 0;}
+#facebox form label {width:360px;float:left;margin-bottom:4px;font-family:'Montserrat',sans-serif;}
+#facebox form input[type=text],#facebox form input[type=password],#facebox form input[type=email],#facebox form select,#facebox form textarea {width:360px;padding:12px 12px;border:1px solid #dbdbdb;float:left;clear:both;margin:0 0 10px 0;font-family:'Montserrat',sans-serif;font-size:13px;color:#000;border-radius:5px;}
+#facebox form select {padding:8px 12px;}
+#facebox form input[type=text]:focus,#facebox form input[type=password]:focus,#facebox form input[type=email]:focus,#facebox form select:focus,#facebox form textarea:focus {border:1px solid #d62136;}
+#facebox form textarea {height:100px;resize:none;}
+#facebox form input[type=submit] {font-family:'Montserrat',sans-serif;background-color:#2b4271;color:#FFF;border:0;margin-top:5px;padding:8px 26px;float:left;border-radius:5px;clear:both;} 
+#facebox form input[type=submit]:hover {background-color:#07222b;cursor:pointer;}
+#facebox form select option {padding:3px 5px;}
+#facebox form label.checkbox input {position:relative;top:-2px;margin-right:5px;}
+#facebox img.facebox {margin-bottom:20px;}
+#facebox table.modal {width:100%;margin:0 auto 30px auto;display:table;}
+#facebox table.modal tr td {padding:8px 10px;font-size:13px;border:1px solid #FFF;border-bottom:1px solid #dbdbdb;margin:1px;}
+#facebox div.form {width:49%;height:90px;padding:0 10px 20px;display:inline-block;position:relative;}
+
+#facebox .canals {width:820px;height:420px;overflow:hidden;}
+
+#facebox .iframe-loading {width:100%;height:100%;background:url(../gfx/icon/loader.gif) center center no-repeat;}
+
+#facebox table.summary {width:500px;}
+#facebox table.summary tr td{padding:4px 10px;}
+
+/*#facebox .lista {width:100%;height:auto;max-height:400px;overflow:hidden;}*/
+#facebox div.header {background-color:#f3f5f9;border-radius:5px;border:1px solid #e2e2e2;padding:10px;margin-bottom:10px;}
+#facebox div.header p {font-family: 'Montserrat', sans-serif;font-weight:500;font-size:20px;margin:0;}
+#facebox div.content {color:#fff;width:800px;max-height:400px;overflow:hidden;display:block;color:#000;}
+#facebox div.content h3 {color:#fff;}
+#facebox div.content p {font-family: 'Montserrat', sans-serif;font-size:14px;}
+#facebox div.content .logos {padding:10px;background-color:#fff;overflow-y:scroll;max-height:400px;font-size:0;}
+#facebox div.content .logos .hr {margin:5px 0;display:block;}
+#facebox div.content .logos .channels {background-color:#f3f5f9;border:1px solid #e2e2e2;width:100%;height:auto;display:block;}
+#facebox div.content .logos p.upper {margin:25px 0 0 0;}
+#facebox div.content .logos .box {position:relative;max-width:8%;margin:1%;padding:5px;border:1px solid #e2e2e2;text-align:center;display:inline-block;vertical-align:middle;background-color:#fff;transition:all 0.3s ease;}
+#facebox div.content .logos .box:hover {border-color:#0ab1f3;}
+#facebox div.content .logos .box.deactivate {opacity:0.3;}
+
+#facebox div.content .logos .box .about {display:none;text-align:left;position:absolute;left:100%;bottom:0;width:300px;height:auto;padding:15px;border:1px solid #e2e2e2;background-color:#fff;box-shadow:0 0 5px rgba(0,0,0,0.15);font-size:0;opacity:1;}
+#facebox div.content .logos .box .about .desc {width:100%;padding-left:2%;position:relative;}
+#facebox div.content .logos .box .about .desc img.hd {top:0;right:10px;position:absolute;}
+#facebox div.content .logos .box .about .desc p {font-size:12px;line-height:19px;}
+#facebox div.content .logos .box .about .desc p.header {font-size:14px;}
+#facebox div.content .logos .box.active .about {display:block;z-index:10;}
+#facebox div.content .logos .box.deactivate.active {opacity:0.9;z-index:10;}
+
+#facebox .programme {text-align:left;width:500px;height:auto;background-color:#fff;font-size:0;}
+#facebox .programme div.desc {width:100%;position:relative;padding:2%;}
+#facebox .programme .desc p {font-size:11px;line-height:19px;font-family: 'Montserrat', sans-serif;}
+#facebox .programme .desc p.cycle {display:inline-block;float:right;font-size:13px;line-height:13px;font-weight:400;text-transform:uppercase;border:1px solid #e2e2e2;padding:5px 10px;}
+#facebox .programme .desc p.desc {text-align:justify;}
+#facebox .programme .desc p.start {font-size:14px;line-heigth:16px;font-weight:400;position:absolute;top:2%;right:2%;text-align:right;}
+#facebox .programme .desc p.start span {font-size:11px;color:#9a9a9a;}
+#facebox .programme .desc p img.thumb {max-width:33%;float:left;margin:5px 10px 0 0;}
+#facebox .programme .desc p.title {font-size:14px;line-height:16px;margin-bottom:0;font-weight:500;min-height:36px;max-width:75%;}
+#facebox .programme .desc p.title span {font-size:11px;color:#9a9a9a;font-weight:400;}
+#facebox .programme .desc table.table {display:inline-table;width:100%;margin:15px auto;}
+#facebox .programme .desc table.table td {width:50%;font-size:11px;line-height:16px;border-bottom:1px solid #f3f5f9;padding:5px;}
+#facebox .programme .desc table.table td:first-child {font-weight:400;color:#8a8a8a;}

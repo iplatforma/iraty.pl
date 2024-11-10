@@ -1,0 +1,198 @@
+table.dane {width:100%;display:table;margin-bottom:30px;}
+table.dane th {font-family:'Jost',sans-serif;padding:15px;font-weight:600;font-size:16px;background-color:#f3f5f9;color:#2D2E83;text-align:left;border:1px solid #fff;}
+table.dane tr:first-child th:first-child {border-top-left-radius:10px;}
+table.dane tr:first-child th:last-child {border-top-right-radius:10px;}
+table.dane tr:last-child td:first-child {border-bottom-left-radius:10px;}
+table.dane tr:last-child td:last-child {border-bottom-right-radius:10px;}
+table.dane td {font-family:'Jost',sans-serif;padding:15px;text-align:left;color:#2D2E83;background-color:#fff;border:1px solid #fff;vertical-align:top;font-size:15px;transition:all 0.5s ease;}
+table.dane td strong {font-weight:500;color:#000;}
+table.dane tr:nth-of-type(odd) td {background-color:#f3f5f9;}
+table.dane td img {max-width:60px;}
+table.dane td.nowrap {white-space:nowrap;}
+table.dane td a.icon {margin-left:6px;}
+table.dane td a {color:#222;}
+table.dane td a:hover {color:#F90;}
+table.dane td.nowrap em {color:#dbdbdb;}
+table.dane th.lp {width:50px;}
+table.dane td.center {text-align:center;}
+table.dane td.sline {line-height:15px;}
+table.dane td.right, table.dane th.right {text-align:right;width:auto;}
+table.dane td span.grey {font-style:italic;color:#a0a0a0;}
+table.dane td.settings {white-space:nowrap;padding-top:15px;text-align:right;}
+table.dane td.settings a {margin:0 6px;}
+table.dane td.settings a:hover {}
+section#main td.settings aside.admin {position:relative;top:0;}
+table.dane tr:hover td {background-color:#e7efee;}
+table.dane tr:hover td {background-color:#e1f7ff;}
+table.dane td a.priority {margin-left:10px;}
+table.dane td a.priority i {font-size:14px;}
+table.dane tr.deactivated {background-image:url('../gfx/icon/deactivated.png');background-position:center center;background-repeat:no-repeat;}
+table.dane tr.deactivated td {opacity:0.8;}
+table.dane tr.deactivated td.settings {opacity:1;}
+table.dane td img.thumb {max-width:80px;max-height:80px;}
+table.dane td a.underline {font-weight:600;color:#000;border-bottom:1px solid #000;}
+table.dane td a.underline:hover {color:#fac534;border-color:#fac534;}
+
+table.konfigurator {width:100%;display:table;margin-bottom:30px;}
+table.konfigurator th {padding:15px;font-weight:400;font-size:14px;line-height:16px;background-color:#262f47;color:#fff;text-align:left;border:1px solid #fff;}
+table.konfigurator tr:first-child th:first-child {border-top-left-radius:10px;}
+table.konfigurator tr:first-child th:last-child {border-top-right-radius:10px;}
+table.konfigurator tr:last-child td:first-child {border-bottom-left-radius:10px;}
+table.konfigurator tr:last-child td:last-child {border-bottom-right-radius:10px;}
+table.konfigurator td {padding:15px;text-align:left;color:#000;background-color:#fff;border:1px solid #fff;vertical-align:top;font-weight:400;font-size:13px;line-height:16px;transition:all 0.5s ease;}
+table.konfigurator td strong {font-weight:400;color:#000;}
+table.konfigurator tr.paczka td {background-color:#00b7ff;}
+table.konfigurator tr.czas td {background-color:#7fdbff;}
+table.konfigurator tr.pakiet td {background-color:#c1edfe;}
+table.konfigurator tr.pozycja td {background-color:#fff;border-bottom:1px solid #c1edfe;}
+table.konfigurator td img {max-width:60px;}
+table.konfigurator td.nowrap {white-space:nowrap;}
+table.konfigurator td a.icon {margin-left:6px;}
+table.konfigurator td a {color:#222;}
+table.konfigurator td a:hover {color:#F90;}
+table.konfigurator td.nowrap em {color:#dbdbdb;}
+table.konfigurator th.lp {width:50px;}
+table.konfigurator td.center {text-align:center;}
+table.konfigurator td i {font-size:12px;}
+table.konfigurator td.sline {line-height:15px;}
+table.konfigurator td.right, table.konfigurator th.right {text-align:right;width:auto;}
+table.konfigurator td span.grey {color:#8a8a8a;}
+table.konfigurator td span.cloud {color:#9a9a9a;font-weight:200;font-size:11px;line-height:13px;}
+/*table.konfigurator tr.paczka td, table.konfigurator tr.paczka td strong {color:#FFF;}*/
+table.konfigurator td.settings {white-space:nowrap;padding-top:15px;text-align:right;}
+table.konfigurator td.settings a {margin:0 6px;}
+table.konfigurator td.settings a:hover {}
+section#main td.settings aside.admin {position:relative;top:0;}
+table.konfigurator tr:hover td {background-color:#e1f7ff;}
+table.konfigurator td a.priority {margin-left:10px;}
+table.konfigurator td a.priority i {font-size:14px;}
+table.konfigurator tr.deactivated {background-image:url('../gfx/icon/deactivated.png');background-position:center center;background-repeat:no-repeat;}
+table.konfigurator tr.deactivated td {opacity:0.8;}
+table.konfigurator tr.deactivated td.settings {opacity:1;}
+table.konfigurator td img.thumb {max-width:80px;max-height:80px;}
+table.konfigurator td a.underline {font-weight:600;color:#000;border-bottom:1px solid #000;}
+table.konfigurator td a.underline:hover {color:#fac534;border-color:#fac534;}
+
+div.pagination {width:100%;text-align:right;height:40px;}
+div.pagination a {background-color:#FFF;}
+div.pagination a, div.pagination strong {font-size:14px;margin:0 2px;border:1px solid #efefef;border-radius:5px;padding:3px 10px;}
+div.pagination strong {border:1px solid #dbdbdb;}
+
+.managment a.button.icon {margin:1%;width:23%;font-weight:400;}
+.managment a.button.icon i {display:inline-block;vertical-align:middle;margin-right:12px;position:relative;top:-1px;}
+
+aside.admin {position:absolute;top:0;right:0;text-align:right;}
+section#banner {padding:30px 0;height:auto;background-color:#E95E29;margin:0}
+section#banner h2 {font-size:20px;color:#FFF;}
+section#banner aside.admin {top:auto;bottom:-14px;}
+section#main aside.admin {top:-60px;}
+section#main .photo aside.admin {top:5px;background-color:rgba(255,255,255,0.75);padding:5px 5px;}
+aside.admin a {margin-left:6px;}
+aside.admin a i {font-size:16px;}
+aside.admin a.button {background-color:#fff;color:#E95E29;border:0;padding:15px;border-radius:5px;text-align:center;font-size:14px;}
+aside.admin a.button:hover {background-color:#f3f3f3;color:#2D2E83;}
+aside.admin a.button.icon {font-size:12px;line-height:15px;}
+aside.admin a.button i {margin:0;font-size:14px;vertical-align:middle;}
+aside.admin a.button.icon i {margin:0 6px 0 0;}
+
+aside.settings {position:fixed;top:45px;left:0;width:48px;height:auto;overflow:visible;z-index:2000;}
+aside.settings a {width:68px;height:58px;display:block;margin:5px 0;padding-left:25px;padding-right:10px;text-align:center;vertical-align:middle;font-size:24px;line-height:58px;background-color:#E95E29;;color:#fff;margin-left:-20px;border-radius:10px;box-shadow:0 0 1px rgba(0,0,0,0.4);}
+aside.settings a:hover {background-color:#2D2E83;margin-left:-10px;}
+
+form.form {display:inline-block;width:100%;height:auto;overflow:visible;}
+form.form .left, form.form .right, form.form .box-3 {position:relative;}
+form.form span.info {display:block;width:100%;font-family:'Jost',sans-serif;font-size:12px;color:#8a8a8a;text-align:right;top:-30px;position:relative;}
+form.form span.suffix {font-family:'Jost',sans-serif;font-size:16px;color:#8a8a8a;text-align:right;top:63px;position:absolute;right:20px;}
+form.form .left span.suffix {right:calc(3% + 30px);}
+form.form .right span.suffix {right:30px;}
+form.form .produkt {position:relative;}
+form.form .produkt .box-4 {width:23.5%;position:relative;}
+form.form .produkt .box-4:nth-of-type(2) {margin:0 1% 0 2%;}
+form.form .produkt .box-4:nth-of-type(3) {margin:0 2% 0 1%;}
+form.form .produkt a.remove {position:absolute;top:0;right:0;font-size:13px;}
+form.form .box-3 span.suffix {right:30px;}
+form.form label {width:100%;color:#1F3347;font-family:'Inter',sans-serif;font-size:18px;display:inline-block;margin:15px 0 10px;}
+form.form label.checkbox {cursor:pointer;max-width:65%;margin:0 auto;display:block;position:relative;padding-left:30px;font-size:18px;line-height:1.4em;color:#3e5061;margin-bottom:30px;}
+.application form.form label.checkbox {font-size:16px;}
+form.form label.checkbox input[type=checkbox] {position:absolute;top:2px;left:0;}
+form.form input[type=text], form.form input[type=number], form.form input[type=email], form.form input[type=password], form.form select, form.form textarea {font-family:'Inter',sans-serif;font-size:16px;width:100%;border:1px solid #f3f3f3;background-color:#f3f3f3;border-radius:5px;vertical-align:top;display:inline-block;line-height:54px;height:54px;margin-right:10px;margin-bottom:35px;padding:10px 15px;transition:all 0.5s ease;}
+form.form input[type=text]:focus, form.form input[type=number]:focus, form.form input[type=email]:focus, form.form input[type=password]:focus, form.form select:focus, form.form textarea:focus {outline:none;}
+form.form input[type="text"][readonly], form.form input[type="number"][readonly], form.form input[type="email"][readonly], form.form input[type="password"][readonly], form.form select[readonly], form.form textarea[readonly] {opacity:0.75;font-style:italic;color:#8a8a8a;}
+form.form input[type="text"][readonly]:focus, form.form input[type="number"][readonly]:focus, form.form input[type="email"][readonly]:focus, form.form input[type="password"][readonly]:focus, form.form select[readonly]:focus, form.form textarea[readonly]:focus, form.form input[type="text"][readonly]:hover, form.form input[type="email"][readonly]:hover, form.form input[type="password"][readonly]:hover, form.form select[readonly]:hover, form.form textarea[readonly]:hover {outline:none;cursor:not-allowed;}
+form.form label.error {color:#db2200;position: absolute;left: 0;bottom: 10px;font-size:13px;}
+form.form .right label.error {padding-left:4%;}
+form.form label.checkbox label.error {left:30px;}
+form.form input[type="text"].error, form.form input[type="email"].error, form.form input[type="password"].error, form.form select.error, form.form textarea.error {border-color:#db2200;}
+form.form label.half {width:50%;vertical-align:middle;}
+form.form label.half.small {font-size:11px;}
+form.form input[type=text].half {width:30%;vertical-align:middle;}
+form.form input[type=text].nomrg {max-width:80px;margin:0 10px;}
+form.form input[type=file] {margin-top:6px;}
+form.form textarea {width:100%;height:140px;line-height:21px;resize:none;}
+form.form input[type=text]:focus, form.form input[type=email]:focus, form.form input[type=password]:focus, form.form select:focus, form.form textarea:focus {border:1px solid #dbdbdb;background-color:#f3f5f9;}
+form.form input[type=submit] {font-family:'Jost',sans-serif;cursor:pointer;display:inline-block;padding:16px 32px 14px;font-size:16px;font-weight:400;color:#04a3e3;border-radius:5px;color:#fff;background-color:#E95E29;border:1px solid #E95E29;transition:all 0.5s ease;}
+form.form input[type=submit]:hover {background-color:#2D2E83;border:1px solid #2D2E83;}
+
+div.form {display:inline-block;width:100%;height:auto;overflow:visible;}
+div.form label {width:100%;color:#4a4a4a;font-size:14px;display:inline-block;margin:15px 0 10px;}
+div.form label.checkbox {}
+div.form label.checkbox.small {position:relative;padding-left:25px;font-size:11px;line-height:13px;color:#7a7a7a;text-align:justify;}
+div.form label.checkbox.family {color:#db2200;font-weight:600;}
+div.form label.checkbox input[type=checkbox], div.form label.checkbox input[type=radio] {position:relative;top:-2px;margin-right:7px;}
+div.form label.checkbox.small input[type=checkbox] {position:absolute;top:-1px;left:0;}
+div.form label.checkbox input[type=radio] {top:-3px;}
+div.form input[type=text], div.form input[type=email], div.form input[type=password], div.form select, div.form textarea {font-family:'Work Sans',sans-serif;font-size:15px;width:80%;border:1px solid #dbdbdb;border-radius:10px;vertical-align:top;display:inline-block;line-height:44px;height:44px;margin-right:10px;margin-bottom:15px;padding:10px 15px;transition:all 0.5s ease;}
+div.form label.half {width:50%;vertical-align:middle;}
+div.form .half.hleft {padding:0 2% 0 0;}
+div.form .half.hright {padding:0 0 0 2%;}
+div.form label.half.half-3 {width:33%;}
+div.form label.half.small {font-size:11px;}
+div.form input[type=text].half {width:30%;vertical-align:middle;}
+div.form input[type=text].nomrg {max-width:80px;margin:0 10px;}
+div.form input[type=file] {margin-top:6px;}
+div.form textarea {width:80%;height:140px;line-height:21px;resize:none;}
+div.form input[type=text].full, div.form input[type=email].full, div.form textarea.full {width:100%;}
+div.form input[type=text]:focus, div.form input[type=email]:focus, div.form input[type=password]:focus, div.form select:focus, div.form textarea:focus {border:1px solid #dbdbdb;background-color:#f3f5f9;}
+div.form input[type=submit] {border:0;font-family:'Lato', sans-serif;display:inline-block;color:#FFF;background-color:#E95E29;padding:14px 36px;font-size:17px;line-height:17px;border-radius:30px;font-weight:500;cursor:pointer;border:1px solid #E95E29;transition:all 0.3s ease;}
+div.form input[type=submit]:hover {background:none;background-color:#2a353e;color:#fff;}
+
+label.radio {display:block;position: relative;padding-left: 35px;margin-bottom: 12px;cursor: pointer;font-size: 22px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+label.radio.inline {display:inline-block;width:auto !important;margin-right:40px;}
+/* Hide the browser's default radio button */
+label.radio input {position: absolute;opacity: 0;cursor: pointer;}
+/* Create a custom radio button */
+label.radio .checkmark {position: absolute;top:-3px;left:0;height: 25px;width: 25px;background-color: #eee;border-radius: 50%;}
+/* On mouse-over, add a grey background color */
+label.radio:hover input ~ .checkmark {background-color: #ccc;}
+/* When the radio button is checked, add a blue background */
+label.radio input:checked ~ .checkmark {background-color: #2D2E83;}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+label.radio .checkmark:after {content: "";position: absolute;display: none;}
+/* Show the indicator (dot/circle) when checked */
+label.radio input:checked ~ .checkmark:after {display: block;}
+/* Style the indicator (dot/circle) */
+label.radio .checkmark:after {top: 8.5px;left: 8.5px;width: 8px;height: 8px;border-radius: 50%;background: white;}
+
+label.checkbox {display: block;position: relative;padding-left: 45px;margin-bottom: 12px;cursor: pointer;font-size: 22px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;max-width:100% !important;transition:all 0.3s ease;}
+label.checkbox.strong {font-weight:600;font-style:italic;margin-bottom:20px;}
+label.checkbox:hover {color:#2d2e83;}
+/* Hide the browser's default checkbox */
+label.checkbox input {position: absolute;opacity: 0;cursor: pointer;height: 0;width: 0;}
+.admin label.checkbox input {opacity:1;width:auto;height:auto;}
+/* Create a custom checkbox */
+label.checkbox .checkmark {position: absolute;top: 0;left: 0;height: 25px;width: 25px;background-color: #eee;transition:all 0.3s ease;}
+/* On mouse-over, add a grey background color */
+label.checkbox:hover input ~ .checkmark {background-color: #ccc;}
+/* When the checkbox is checked, add a blue background */
+label.checkbox input:checked ~ .checkmark {background-color: #2D2E83;}
+/* Create the checkmark/indicator (hidden when not checked) */
+label.checkbox .checkmark:after {content: "";position: absolute;display: none;}
+/* Show the checkmark when checked */
+label.checkbox input:checked ~ .checkmark:after {display: block;}
+/* Style the checkmark/indicator */
+label.checkbox .checkmark:after {left: 9px;top: 5px;width: 7px;height: 13px;border: solid white;border-width: 0 3px 3px 0;-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);}
+
+label.checkbox a {background-color:#fafaff;padding:4px 5px;color:#2D2E83;font-size:14px;border-radius:5px;transition:all 0.3s ease;}
+label.checkbox a:hover {text-decoration:none;background-color:#E95E29;color:#fff;}
+
+div.agree6 {background-color:#fafaff;padding:15px 35px;border-radius:5px;margin-bottom:30px;text-align:justify;}

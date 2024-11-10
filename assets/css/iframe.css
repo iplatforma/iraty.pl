@@ -1,0 +1,129 @@
+@import url('basic.css');
+@import url('font.css');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,500italic,700,700italic,300&subset=latin,latin-ext);
+
+body {margin:0 auto;}
+body#calculator {background-color:rgba(255,255,255,0.95);}
+p,span,h2,h3,h4,li,label,input,textarea,div.pagination,a.button {font-family:"Open Sans",sans-serif;font-size:18px;font-weight:300;color:#6a6a6a;line-height:26px;}
+p,h1,h2,h3,h4 {margin-bottom:1em;}
+
+a {color:#ea5e29;}
+a:hover {color:#111;}
+.justify {width:1100px;margin:0 auto;}
+.justify.less {width:1000px;}
+td,th,td span, td a {text-align:left;font-family:Arial, Helvetica, sans-serif;}
+td.center, th.center {text-align:center;}
+td.nowrap {white-space:nowrap;}
+td.right, th.right {text-align:right;}
+a.button {display:inline-block;margin:30px auto;background-color:#ea5e29;color:#FFF;padding:8px 12px;}
+a.button:hover {background-color:#111;}
+a.button.produkt {background-color:#FFF;color:#7daabb;padding:0;font-weight:400;}
+a.button.produkt:hover {color:#ea5e29;}
+a.button.produkt i {color:#ea5e29;margin-right:6px;position:relative;top:-1px;}
+p.little {font-size:13px;line-height:16px;width:600px;margin:0 0 1em;text-align:left;}
+
+h3 {font-size:36px;line-height:42px;font-weight:600;color:#242424;margin-bottom:0.6em;}
+h4 {font-size:30px;line-height:36px;color:#242424;font-weight:400;}
+.green {color:#ea5e29;}
+span.rata {font-size:26px;font-weight:600;text-decoration:underline;}
+span.kwota {font-weight:600;}
+p.marginbottom {margin-bottom:0;}
+article#content p.supp {font-size:18px;}
+hgroup h3 {margin-bottom:0;}
+hgroup h4 {font-size:24px;line-height:24px;font-weight:300;}
+.orange {color:#ea5e29;}
+p.big {font-size:30px;color:#6a6a6a;line-height:34px;}
+p.center {text-align:center;}
+p.big strong {font-weight:700;}
+img.center {margin:30px auto;display:block;}
+
+a {color:#000;text-decoration:none;transition:all 0.3s ease;}
+a:hover, a.active {color:#ea5e29;}
+
+div.justify {width:640px;display:block;margin:0 auto;position:relative;}
+
+header#logo {width:100%;height:90px;text-align:center;z-index:12;background-color:#2a2a2a;display:inline-block;}
+header#logo h1 {margin:12px auto;}
+
+section.content {width:100%;height:auto;display:block;padding:40px 0 0;margin:0 auto;}
+
+section.content p.phone {position:absolute;top:128px;right:0;}
+
+section.content header h2 {color:#ea5e29;font-size:40px;font-weight:700;}
+section.content header h2 span {display:block;margin-top:20px;font-size:24px;line-height:28px;font-weight:300;color:#6a6a6a;}
+
+section.choice div.box {width:30%;height:450px;border:1px solid #dbdbdb;text-align:center;background-color:#FFF;margin:0 2% 0 0;display:inline-block;padding:3% 1%;vertical-align:top;transition:all 0.5s ease;}
+section.choice div.box:hover {background-color:#ea5e29;}
+section.choice div.box p {margin:25px auto;}
+section.choice div.box p a {color:#6a6a6a;font-size:30px;font-weight:700;}
+section.choice div.box p a span {font-size:30px;font-weight:700;color:#ea5e29;}
+section.choice div.box:hover p a span {color:#FFF;}
+section.choice div.box:hover p a {color:#FFF;}
+section.choice div.box img.second {display:none;}
+section.choice div.box:hover img.second {display:block;margin:0 auto;}
+section.choice div.box img.first {display:block;margin:0 auto;}
+section.choice div.box:hover img.first {display:none;}
+
+div.calculator {width:100%;display:inline-block;vertical-align:top;}
+div.calculator h3 {color:#6a6a6a;font-size:24px;font-weight:700;}
+div.calculator .scontent {width:100%;height:auto;overflow:visible;min-height:55px;margin-top:10px;margin-bottom:10px;position:relative;background-repeat:no-repeat;background-position:center 0px;border-bottom:1px solid #f3f5f9;}
+div.calculator input[type=text], div.calculator select {position:absolute;right:0;top:2px;font-size:18px;font-family:"Ubuntu",sans-serif;text-align:right;width:220px;border:1px solid #ea5e29;padding:6px 10px;color:#ea5e29;font-weight:600;box-shadow:inset 0 0 5px rgba(0,0,0,0.2);}
+div.calculator div.checkbox label {position:relative;top:3px;margin-left:3px;font-weight:400;}
+div.calculator a img.oblicz {margin-top:50px;}
+
+div.result {opacity:0;transition:all 0.5s ease;}
+div.result.active {opacity:1;}
+div.result {width:100%;height:80px;margin:50px auto 0;font-size:0;}
+div.result div.result-rata {width:50%;height:80px;display:inline-block;vertical-align:top;padding:0 20px;border:1px solid #ea5e29;position:relative;box-shadow:inset 0 0 5px rgba(0,0,0,0.1);}
+div.result div.result-button {width:50%;height:60px;display:inline-block;vertical-align:top;position:relative;box-shadow:inset 0 0 5px rgba(0,0,0,0.1);}
+div.result div.result-rata p {line-height:23px;font-size:15px;color:#000;padding-top:26px;}
+div.result div.result-rata p strong {font-weight:400;}
+div.result div.result-rata p.txt {line-height:16px;padding:23px 0 0 45px;font-weight:400;font-style:italic;text-align:left;color:#000;}
+div.result div.result-rata i {position:absolute;top:15px;left:25px;font-size:48px;color:#ea5e29;}
+div.result div.result-button a {display:block;width:100%;height:80px;font-size:15px;color:#FFF;background-color:#ea5e29;padding:23px 20px 0;font-family:'Open Sans',sans-serif;box-shadow:inset 0 0 5px rgba(0,0,0,0.3);text-shadow:1px 1px 0 rgba(0,0,0,0.5);}
+div.result div.result-button a i {position:absolute;top:31px;right:25px;transition:all 0.3s ease;}
+div.result div.result-button a:hover i {right:15px;}
+div.result div.result-button a span {color:#FFF;font-size:13px;}
+div.result div.result-button a:hover {background-color:#2a2a2a;}
+
+div.supplement {width:351px;display:inline-block;vertical-align:top;}
+div.supplement.border {border:2px solid #ea5e29;padding:25px 20px;margin-top:144px;position:relative;}
+div.supplement.border img.arrow {position:absolute;top:20px;left:-13px;}
+div.supplement h3 {color:#6a6a6a;font-size:24px;font-weight:700;line-height:26px;}
+div.supplement article {background-color:#ea5e29;width:100%;height:auto;overflow:visible;color:#FFF;padding:40px 25px;margin-bottom:20px;position:relative;}
+div.supplement article div.arrow {position:absolute;top:55px;left:-11px;background-image:url('../gfx/icon/arrow.png');background-repeat:no-repeat;width:11px;height:21px;}
+div.supplement a.marginbtm img {display:block;margin-bottom:20px;}
+div.supplement article header h3 {color:#FFF;font-size:30px;font-weight:700;}
+div.supplement article p {color:#FFF;}
+div.supplement article ul {list-style:none;}
+div.supplement article ul li {color:#FFF;}
+div.supplement article ul li:before {color:#2a2a2a;content:'\2022';padding:0 6px 0 3px;font-size:30px;position:relative;top:6px;}
+div.supplement article p {margin:1em 0 0 0;}
+div.supplement article p strong {font-weight:700;}
+div.supplement article p.phonehour {margin:0;color:#2a2a2a;}
+
+section.content p.header {font-size:24px;line-height:30px;}
+
+section.center div.justify p {padding:0 10%;}
+
+section.center div.justify {font-size:0;}
+
+@media all and (max-width: 680px) {
+	div.justify {width:96%;}
+	section.content header h2 {font-size:28px;}
+	section.content header h2 span {font-size:16px;}
+	div.calculator h3 {font-size:18px;font-weight:500;}
+}
+@media all and (max-width: 580px) {
+	div.result {display:inline-table;}
+	div.result div.result-rata, div.result div.result-button {width:100%;}
+	div.result div.result-rata p.txt {padding-top:32px;}
+}
+
+@media all and (max-width: 480px) {
+	header#logo {height:80px;}
+	header#logo img {max-width:90%;height:auto;}
+	div.calculator .scontent {min-height:100px;}
+	div.calculator input[type="text"], div.calculator select {width:100%;top:40px;}
+}

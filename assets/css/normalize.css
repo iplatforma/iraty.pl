@@ -1,0 +1,70 @@
+﻿a {text-decoration:none;outline:none;color:#000 ;transition:all 0.3s ease;}
+a:hover {color:#000;text-decoration:underline;}
+img {max-width:100%;height:auto;}
+
+p, li, td, th {font-family:'Montserrat', sans-serif;font-size:14px;font-weight:400;line-height:23px;} p strong {font-weight:600;}
+sup {position:relative;top:-5px;font-size:0.8em;}
+
+h2 {font-family:'Jost',sans-serif;font-size:62px;line-height:1.2em;font-weight:600;color:#2D2E83;margin-bottom:1em;margin-top:0;position:relative;}
+h3 {font-family:'Jost',sans-serif;font-size:42px;line-height:1.2em;font-weight:600;color:#2D2E83;margin-bottom:1em;}
+.app-header {max-width:100%;margin:0 auto;text-align:center;}
+.app-header h2 {text-align:left;padding:0 0 30px 0;font-size:50px;background-image:url('../gfx/design/under-header.png');background-repeat:no-repeat;background-position:left 15px;margin-bottom:0.5em;}
+h2 span.linia {font-size:12px;position:absolute;top:2px;right:0;padding-right:120px;background-repeat:no-repeat;background-position:right center;background-image:url('../gfx/icon/santander-cb.png');}
+.application h3 {font-size:24px;}
+
+.hr {margin:20px auto;border-bottom:1px solid #ececec;display:inline-block;width:100%;}
+.hr.more {margin:80px auto;}
+.clear {margin:20px auto;display:inline-block;width:100%;}
+
+.upper {text-transform:uppercase;}
+.nowrap {white-space:nowrap;}
+.align-right {text-align:right;}
+
+span {font-size:inherit;}
+
+p.header.orange {font-size:22px;color:#E95E29;font-weight:500;}
+
+a.button {font-family: 'Inter', sans-serif;display:inline-block;color:#FFF;background-color:#E95E29;border:1px solid #E95E29;padding:15px 50px;font-size:16px;line-height:16px;color:#fff;border-radius:30px;font-weight:400;}
+a.button.inline {margin-right:15px;}
+a.button.transparent {background-color:transparent;border:1px solid #E95E29;color:#2D2E83;}
+a.button.bigger {font-size:22px;padding:30px 100px;}
+a.button.orange {background-color:#E95E29;border:1px solid #E95E29;color:#fff;}
+a.button.blue {background-color:#2D2E83;border:1px solid #2D2E83;color:#fff;}
+a.button.blue.border {background-color:#fff;border:1px solid #2D2E83;color:#2D2E83;}
+a.button.white {background-color:#fff;border:1px solid #fff;color:#E95E29;}
+a.button.small {background-color:#fff;border:1px solid #fff;color:#E95E29;padding:15px 5px;}
+a.button i {margin-left:5px;margin-right:5px;font-size:14px;transition:all 0.3s ease;}
+a.button.blue.border i {color:#e95e29;}
+a.button:hover {background-color:#2D2E83;border:1px solid #2D2E83;color:#fff;text-decoration:none;}
+a.button:hover i {margin-left:10px;margin-right:0;}
+a.button.blue.border:hover i {color:#fff;}
+a.button.transparent:hover {background-color:#E95E29;border-color:#e95e29;}
+a.button.small:hover {background-color:#fff;border-color:#fff;color:#2D2E83;}
+a.button.blue.border:hover, a.button.blue:hover {background-color:#E95E29;border:1px solid #E95E29;color:#fff;}
+a.button.white:hover, a.button.orange:hover {backgorund-color:#2D2E83;border-color:#2D2E83;color:#fff;}
+
+.justify {width:1600px;height:auto;display:block;margin:0 auto;position:relative;}
+.justify.small, .justify.narrow {width:940px;}
+.justify.application {width:760px;}
+.center {text-align:center;}
+.full {width:100%;display:block;margin:0 auto;font-size:0;position:relative;}
+.padding {padding-top:90px;padding-bottom:90px;}
+.padding.more {padding-top:140px;padding-bottom:140px;} 
+.wide .justify {width:1240px;}
+
+.box {height:auto;overflow:visible;}
+
+.left, .right {width:50%;}
+.left {padding-right:2%;}
+.right {padding-left:2%;}
+
+.box-2 {width:50%;} 
+.box-3 {width:32%;}
+.box-3:nth-of-type(3n-1) {margin:0 2%;}
+.box-4 {width:25%;}
+.box-5 {width:20%;}
+.box-6 {width:16.6666%;}
+
+.inline {display:inline-block;vertical-align:top;}
+.minline {display:inline-block;vertical-align:middle;}
+.binline {display:inline-block;vertical-align:bottom;}
