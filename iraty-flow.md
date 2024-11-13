@@ -241,3 +241,89 @@ formularz w kodzie wyglda następuąco na pewno da się to spryniej, ale dla jas
 <input type="hidden" name="blokadaWplaty" value="1" />
 <input type="hidden" name="char" value="ISO" />
 ```
+
+### Wniosek przez stronę partnera - produkt
+### Kalkulator
+
+1. Po kliknięciu w przycisk iraty z strony produktu partnera musi nastąpić przekierowanie na edpoint:
+`kalkulator/{id_partnera}/{cena_produktu}`
+
+2. Pobieramy info partnera z platformy finansowej przez: https://www.platformafinansowa.pl/partner/pokaz/{id_partnera}
+przykład dla partnera 3567:
+```shell
+curl --location 'https://www.platformafinansowa.pl/partner/pokaz/3567' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: pf_session=cd2411fa87a5e3646625713b52dd5f57' \
+--data-urlencode 'klucz=abc'
+```
+Dane zwracane przez ten edpoint są serializowane w php, więc odbiorca będzie musiał je odkodować. Przykładowa biblioteka w javie:
+https://code.google.com/archive/p/serialized-php-parser/
+
+3. Ustalmy zakres rat i oprocentowanie:
+Tablea pratner w platformie finansowej posiada kilka flag kontrolujących opcje kalkulatora:
+
+`raty_oze`:
+- zakres rat: 40-120
+- domyślna ilość rat: 60
+- oprocentowanie: 0.63
+
+`oprocentowanie_zero`:
+- zakres rat: 6-60
+- domyślna ilość rat: 10 
+- oprocentowanie: 0 jeśli wybrano dokładnie 10 rat dla innej warości jest domyśłne oprocentowanie
+
+`rabat_10p`:
+- zakres rat: 6-60
+- domyślna ilość rat: 60
+- oprocentowanie: domyślne dla wybrange zakresu rat
+- rabat 10% od wartości produktu
+
+`raty_10`:
+- zakres rat: 6-60
+- domyślna ilość rat: 10
+- oprocentowanie: 0.5
+
+`raty_1060`:
+- zakres rat: 6-60
+- domyślna ilość rat: 60
+- oprocentowanie: 0.5 dla zakresu 10-60, dla zekrau 6-60 -> domyśłna wartość
+
+`parnter.id = 3167`
+- zakres rat: 10-10
+- domyślna ilość rat: 10
+- oprocentowanie: oprocentowanie według flagi oprocentowanie_zero
+
+`domyślne`
+- zakres rat: 6-60
+- domyślna ilość rat: 60
+- oprocentowanie:
+```shell
+curl --location 'https://www.platformafinansowa.pl/oprocentowanie/pokaz' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: pf_session=cbf295b297585747e1ef35743daed1dd' \
+--data-urlencode 'klucz=abc'
+```
+
+4. Obliczamy ratę:
+prowizja = oprocentowanie * ilosc / 100 * kwota
+brutto = prowizja + kwota
+rata = brutto / ilosc
+
+### Krok 1 Szczegóły zakupu 
+1. Obliczamy raty na podstawie danych z kalkulatora dla poszczególnych produktów
+2. Jeśli partner ma ustawioną jedną z wyżej wymienionych flag chowamy przycisk z odroczeniem spłat o 4 miesiące.
+
+Kolejne kroki są takie same jak poprzednio
+
+### Wniosek przez stronę partnera - koszyk
+W przypadku przekierowania z koszyka do platoformy iraty, rozpoczynamy od wypelnionego formularza w korku 1 
+Integrator POSTEM pod endpoint https://iraty.pl/integracja/
+z następujacymi parametrami:
+- nazwa
+- link
+- cena
+- kwota
+- wysyłka
+- partner
+- info
+- sklep
