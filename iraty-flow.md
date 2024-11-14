@@ -229,7 +229,7 @@ formularz w kodzie wyglda następuąco na pewno da się to spryniej, ale dla jas
   {/foreach}
 <input type="hidden" name="wartoscTowarow" value="{sum}" />
 <input type="hidden" name="liczbaSztukTowarow" value="{count(produkt)}" />
-<input type="hidden" name="numerSklepu" value="{split(nr_wniosku, '|')[0]}" />
+<input type="hidden" name="numerSklepu" value="{split(nr_wniosku, '|')[1]}" />
 <input type="hidden" name="typProduktu" value="0" />
 <input type="hidden" name="sposobDostarczeniaTowaru" value="kurier" />
 <input type="hidden" name="nrZamowieniaSklep" value="{split(nr_wniosku, '|')[0]}" />
@@ -259,6 +259,8 @@ curl --location 'https://www.platformafinansowa.pl/partner/pokaz/3567' \
 Dane zwracane przez ten edpoint są serializowane w php, więc odbiorca będzie musiał je odkodować. Przykładowa biblioteka w javie:
 https://code.google.com/archive/p/serialized-php-parser/
 
+Dodatkowo niektórzy partnerzy mają własny ustawiony własny zakres oprocentowania w kolumnie `oprocentowanie_raty`
+
 3. Ustalmy zakres rat i oprocentowanie:
 Tablea pratner w platformie finansowej posiada kilka flag kontrolujących opcje kalkulatora:
 
@@ -270,7 +272,7 @@ Tablea pratner w platformie finansowej posiada kilka flag kontrolujących opcje 
 `oprocentowanie_zero`:
 - zakres rat: 6-60
 - domyślna ilość rat: 10 
-- oprocentowanie: 0 jeśli wybrano dokładnie 10 rat dla innej warości jest domyśłne oprocentowanie
+- oprocentowanie: 0 jeśli wybrano dokładnie 10 rat dla innej warości jest domyśłna oprocentowanie lub dla danego partnera
 
 `rabat_10p`:
 - zakres rat: 6-60
@@ -286,7 +288,7 @@ Tablea pratner w platformie finansowej posiada kilka flag kontrolujących opcje 
 `raty_1060`:
 - zakres rat: 6-60
 - domyślna ilość rat: 60
-- oprocentowanie: 0.5 dla zakresu 10-60, dla zekrau 6-60 -> domyśłna wartość
+- oprocentowanie: 0.5 dla zakresu 10-60, dla zekrau 6-60 -> domyśłna wartość / wartość ustawiona dla partnera
 
 `parnter.id = 3167`
 - zakres rat: 10-10
@@ -313,17 +315,109 @@ rata = brutto / ilosc
 1. Obliczamy raty na podstawie danych z kalkulatora dla poszczególnych produktów
 2. Jeśli partner ma ustawioną jedną z wyżej wymienionych flag chowamy przycisk z odroczeniem spłat o 4 miesiące.
 
-Kolejne kroki są takie same jak poprzednio
+Po przejści dalej zapisujemy dane tak jak poprzednio dodatkowo:
+Jeśli partner w kolumnie stantader posiada wartosć 3:
+Przy zapisawaniu danych do wniosku dla każdego porduktu ustawiamy w nazwie 'Zamówinie'
+i w linku podruktu '---'
+
+Kolejne kroki są takie same jak w przypadku `Wniosek przez stronę`
 
 ### Wniosek przez stronę partnera - koszyk
-W przypadku przekierowania z koszyka do platoformy iraty, rozpoczynamy od wypelnionego formularza w korku 1 
-Integrator POSTEM pod endpoint https://iraty.pl/integracja/
+### Krok 1 Szczegóły zakupu
+1. W przypadku przekierowania z koszyka do platoformy iraty, rozpoczynamy od wypelnionego formularza w korku 1 
+Sklep partnera wysyła request POST pod endpoint https://iraty.pl/integracja/
 z następujacymi parametrami:
-- nazwa
-- link
+- nazwa - nazwa towaru
+- link - link do towaru
 - cena
 - kwota
 - wysyłka
-- partner
-- info
+- partner - id partnera
+- info - numer zamowineia w sklepie
 - sklep
+
+2. Pobieramy info partnera z platformy finansowej przez: https://www.platformafinansowa.pl/partner/pokaz/{id_partnera}
+   przykład dla partnera 3567:
+```shell
+curl --location 'https://www.platformafinansowa.pl/partner/pokaz/3567' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: pf_session=cd2411fa87a5e3646625713b52dd5f57' \
+--data-urlencode 'klucz=abc'
+```
+
+3. Wypełniamy formularz w korku 1 następującymi danymi:
+- nazwa towaru - przesłana nazwa lub link do towaru
+- link - link do towaru
+- cena - cena towaru
+- ilosc - ilosc towaru
+- koszt_wysylki - koszt wysyłki
+
+Sumujemy ceny towarów i dodajemy kosz wysyłki
+
+4. Stosujemy zniżki i rabaty dla partnera takie same w przypadku punktu `Wniosek przez stronę partnera - produkt`
+
+Jeśli partner w kolumnie stantader posiada wartosć 3:
+Przy zapisawaniu danych do wniosku dla każdego porduktu ustawiamy w nazwie 'Zamówinie'
+i w linku podruktu '---'
+
+
+Krok 2 Jest taki sam jak w przypadku `Wniosek przez stronę`
+### Krok 3 Faktura
+1. Jeśli partner w kolumnie stantader posiada wartosć 4:
+Zapisujemy dane z faktury tak jak w `Wniosek przez stronę partnera - produkt` i
+  Tak jak wcześniej wchodzimy na
+  wniosek = select * -{poza id z tabeli} from wniosek where id = {id wniosku z sesji}
+  dane = select * -{poza id z tabeli} from dane where id = {id wniosku z sesji}
+  dochod = select * -{poza id z tabeli} from dochod where id = {id wniosku z sesji}
+  zakup = select tryb,wysylka from zakup where wniosek = {id wniosku z sesji}
+  produkt = select id,nazwa,produkt,ilosc,wysylka,cena from zakup where wniosek = {id wniosku z sesji}
+
+Wysyłamy POST pod adres: https://www.platformafinansowa.pl/import-ratalna
+payload multipart/form-data:
+serializacja(
+wniosek = [
+dane,
+dochod,
+zakup,
+produkt
+])
+w kodzie jest użyta do tegeo funkcja: https://www.php.net/manual/en/function.serialize.php
+nr_wniosku_z_pf = nr_wniosku z odpowiedzi na poprzedni POST
+nr_sklepi_z_pf = split(nr_wniosku_z_pf, '|')[0]
+id_wniosku_z_pf = split(nr_wniosku_z_pf, '|')[1]
+Gernaujemy link z przekierowaniem w mailu: www.iraty.pl/wniosek/finalizacja/{id_wniosku}/{id_wniosku_z_pf}/{nr_sklepi_z_pf}'
+
+Następnie wsyłamy email do klienta z linkiem do finalizacji wniosku
++ wysyłamy sms z powiadomieniem na podany numer telefonu
+  I pokazuemy ekran z końcowy
+
+Następnie strzelamy POST opd adres banku https://wniosek.eraty.pl/formularz:
+formularz w kodzie wyglda następuąco na pewno da się to spryniej, ale dla jasności zostawiłem tak:
+```html
+{sum = 0}
+<form action="https://wniosek.eraty.pl/formularz" name="auto_send" method="post" accept-charset="utf-8">
+  {foreach k, p from produkt}
+    {wartosc_prod = p.cena * p.ilosc + p.wysylka}
+    {sum += wartosc_prod}
+    <input type="hidden" name="idTowaru{k}" value="37751" />
+    <input type="hidden" name="nazwaTowaru{k}" value="{p.ilosc} x {p.nazwa}" />
+    <input type="hidden" name="wartoscTowaru{k}" value="{wartosc_prod}" />
+    <input type="hidden" name="liczbaSztukTowaru{k}" value="{p.ilosc}" />
+    <input type="hidden" name="jednostkaTowaru{k}" value="szt" />
+  {/foreach}
+<input type="hidden" name="wartoscTowarow" value="{sum}" />
+<input type="hidden" name="liczbaSztukTowarow" value="{count(produkt)}" />
+<input type="hidden" name="numerSklepu" value="{split(nr_wniosku, '|')[1]}" />
+<input type="hidden" name="typProduktu" value="0" />
+<input type="hidden" name="sposobDostarczeniaTowaru" value="kurier" />
+<input type="hidden" name="nrZamowieniaSklep" value="{split(nr_wniosku, '|')[0]}" />
+<input type="hidden" name="pesel" value="{dane.pesel}" />
+<input type="hidden" name="imie" value="{dane.imie}" />
+<input type="hidden" name="nazwisko" value="{dane.nazwisko}" />
+<input type="hidden" name="email" value="{dane.email}" />
+<input type="hidden" name="telKontakt" value="{dane.nr_telefonu}" />
+<input type="hidden" name="blokadaWplaty" value="1" />
+<input type="hidden" name="char" value="ISO" />
+```
+
+2. Jeśli partner w kolumnie stantader posiada wartosć inną niż 4 flow jest taki sam jak i innych przypadkach
