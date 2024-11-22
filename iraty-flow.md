@@ -394,5 +394,5 @@ Następnie wysyłamy email do klienta z linkiem do finalizacji wniosku +
 wysyłamy sms z powiadomieniem na podany numer telefonu i przechodzimy do ekranu końcowego. Też z informacją, że link został
 wysłany mailowo.
 
-Kiedy wnioskodawca klinki link na mailu strzelamy POST wysyłamy formularz do banku santander. Tak jak w [korku 4](#krok-4-podsumowanie---httpiratyplpodsumowanie) w przypadku wniosku przez stronę
+Kiedy wnioskodawca kliknie link na mailu strzelamy POST wysyłamy formularz do banku santander. Tak jak w [korku 4](#krok-4-podsumowanie---httpiratyplpodsumowanie) w przypadku wniosku przez stronę
 Tylko z tą różnicą, że id_wniosku_z_pf i nr_sklepi_z_pf pobieramy z linku, a nie z odpowiedzi z platformy finansowej.
