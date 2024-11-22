@@ -19,6 +19,10 @@ prowizja = oprocentowanie * ilosc / 100 * kwota
 brutto = prowizja * kwota
 rata = brutto / ilosc
 ```
+licze na przykładzie kwota = 1000, ilosc rat 10, oprocentowanie 1(%)
+prowizja = 1*10/100*1000 = 1/10*1000 = 100 - ta wartość jest ok
+brutto = 100 * 1000 = 10 000 czyli źle a powinno być brutto = prowizja + kwota czyli 1100
+i wówczas rata = brutto/ilosc czyli 1100/10 = 110 
 
 Oprocentowanie uzyte w wzorze pobieramy z https://www.platformafinansowa.pl/oprocentowanie/pokaz
 ```shell
